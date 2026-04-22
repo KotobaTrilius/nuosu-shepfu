@@ -203,7 +203,7 @@ const radicalMap = {
         vars: ["꒴", "꒵", "꒶", "꒷"],
         syllables: [
             [1, ["jo"]],
-            [2, ["bbap", "lu", "nbop", "jot", "xit", "xie", "xiet", "jjy", "be"]],
+            [2, ["bbap", "lu", "nbop", "jot", "xit", "xie", "xiet", "jjy", "be", "w"]],
             [3, ["map", "nbo", "cep", "xot", "dip", "bbop"]],
             [4, ["njiet", "ssat", "nzu", "got", "ssyr"]],
             [5, ["nzup"]]
