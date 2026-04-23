@@ -50,7 +50,7 @@ const translations = {
         copy_error_alert: "复制错误。"
     },
     "zh-TW": {
-        title: "ꎹ / SHEPFU",
+        title: "ꎹꃚ / SHEPFU",
         subtitle: "涼山規範彝文檢字編輯器",
         editor_placeholder: "在此處輸入或點擊下方按鈕插入字元...",
         copy_btn: "📋 複製文字",
