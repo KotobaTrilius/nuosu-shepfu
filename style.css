@@ -1,5 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Yi&display=swap');
 
+@font-face {
+    font-family: 'NiepSha Cursive';
+    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Thin.ttf') format('ttf');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Cursive';
+    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Light.ttf') format('ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Cursive';
+    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Cursive';
+    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Cursive';
+    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Black.ttf') format('ttf');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Sans';
+    src: url('./fonts/NiepShaExtremum-Sans-Beta-Thin.ttf') format('ttf');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Sans';
+    src: url('./fonts/NiepShaExtremum-Sans-Beta-Light.ttf') format('ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Sans';
+    src: url('./fonts/NiepShaExtremum-Sans-Beta-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Sans';
+    src: url('./fonts/NiepShaExtremum-Sans-Beta-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NiepSha Sans';
+    src: url('./fonts/NiepShaExtremum-Sans-Beta-Black.ttf') format('ttf');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f4f4f9;
@@ -28,7 +108,7 @@ body {
 }
 
 :lang(ii) {
-    font-family: "Noto Sans Yi", "Source Han Sans CN", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: "NiepSha Sans", "Noto Sans Yi", "Source Han Sans CN", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 .container {
@@ -336,7 +416,7 @@ button:hover {
 }
 
 .char-btn, .radical-btn {
-    font-family: "Noto Sans Yi", "Microsoft YaHei", sans-serif;
+    font-family: "NiepSha Sans", "Noto Sans Yi", "Microsoft YaHei", sans-serif;
 }
 
 #radical-char-buttons.char-grid {
