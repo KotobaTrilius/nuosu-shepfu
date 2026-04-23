@@ -1,5 +1,3 @@
-import { toIPA } from './phonetic-converter.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof charInfo === 'undefined' || typeof charStrokes === 'undefined' || typeof radicalMap === 'undefined') {
         alert(t('load_error'));
@@ -54,6 +52,37 @@ document.addEventListener('DOMContentLoaded', () => {
         myField.dispatchEvent(event);
     }
 
+    function toIPA(latinSyllable) {
+        let remaining = latinSyllable;
+        let initialIPA = "";
+        let finalIPA = "";
+        let toneMark = tones[""];
+
+        const lastChar = remaining.slice(-1);
+        if (["t", "x", "p"].includes(lastChar)) {
+            toneMark = tones[lastChar];
+            remaining = remaining.slice(0, -1);
+        }
+
+        const initialKeys = Object.keys(initials).sort((a, b) => b.length - a.length);
+        for (const key of initialKeys) {
+            if (remaining.startsWith(key)) {
+                initialIPA = initials[key];
+                remaining = remaining.slice(key.length);
+                break;
+            }
+        }
+
+        if (finals[remaining]) {
+            finalIPA = finals[remaining];
+        } else {
+            console.warn(`Unknown final: "${remaining}" in syllable "${latinSyllable}"`);
+            return null;
+        }
+
+        return initialIPA + finalIPA + toneMark;
+    }
+
     function showInfo(char) {
         const pinyin = charInfo[char] || "?";
         const strokes = charStrokes[char] || "";
@@ -64,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         infoDisplay.innerHTML = `
             <strong>${t('info_char')}:</strong> ${char} | 
             <strong>${t('info_pinyin')}:</strong> ${pinyin} |
-            <strong>${t('info_ipa')}:</strong> /${ipa}/
+            <strong>${t('info_ipa')}:</strong> <span class="ipa">/${ipa}/</span>
         `;
         // | <strong>${t('info_strokes')}:</strong> ${formattedStrokes}
     }

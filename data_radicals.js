@@ -75,7 +75,7 @@ const radicalMap = {
     "꒙": {
         name: "ꉆꀨ",
         syllables: [
-            [1, ["hxix", "lyp", "hma"]],
+            [1, ["hxit", "lyp", "hma"]],
             [2, ["ji", "ggiep", "ly", "lep", "wa", "wap", "bbur", "chy", "dep", "rrep", "cho", "zhyp"]],
             [3, ["zziep", "ddit", "shuop", "fa", "zzit", "vip", "bbe"]],
             [4, ["ndit", "fap", "ssie", "ijyt", "ssiep"]],

@@ -378,3 +378,8 @@ button:hover {
     border: 1px solid #ddd !important;
     background: white !important;
 }
+
+.ipa {
+    font-family: "Fira Sans", serif;
+    font-size: 105%;
+}
