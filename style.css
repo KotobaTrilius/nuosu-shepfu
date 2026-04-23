@@ -2,23 +2,7 @@
 
 @font-face {
     font-family: 'NiepSha Cursive';
-    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Thin.ttf') format('ttf');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'NiepSha Cursive';
-    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Light.ttf') format('ttf');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'NiepSha Cursive';
-    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Medium.ttf') format('ttf');
+    src: url('fonts/NiepShaExtremum-Cursive-Beta-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -26,7 +10,7 @@
 
 @font-face {
     font-family: 'NiepSha Cursive';
-    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Bold.ttf') format('ttf');
+    src: url('fonts/NiepShaExtremum-Cursive-Beta-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -34,7 +18,7 @@
 
 @font-face {
     font-family: 'NiepSha Cursive';
-    src: url('./fonts/NiepShaExtremum-Cursive-Beta-Black.ttf') format('ttf');
+    src: url('fonts/NiepShaExtremum-Cursive-Beta-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -42,23 +26,7 @@
 
 @font-face {
     font-family: 'NiepSha Sans';
-    src: url('./fonts/NiepShaExtremum-Sans-Beta-Thin.ttf') format('ttf');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'NiepSha Sans';
-    src: url('./fonts/NiepShaExtremum-Sans-Beta-Light.ttf') format('ttf');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'NiepSha Sans';
-    src: url('./fonts/NiepShaExtremum-Sans-Beta-Medium.ttf') format('ttf');
+    src: url('fonts/NiepShaExtremum-Sans-Beta-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -66,16 +34,8 @@
 
 @font-face {
     font-family: 'NiepSha Sans';
-    src: url('./fonts/NiepShaExtremum-Sans-Beta-Bold.ttf') format('ttf');
+    src: url('fonts/NiepShaExtremum-Sans-Beta-Bold.ttf') format('truetype');
     font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'NiepSha Sans';
-    src: url('./fonts/NiepShaExtremum-Sans-Beta-Black.ttf') format('ttf');
-    font-weight: 900;
     font-style: normal;
     font-display: swap;
 }
@@ -108,7 +68,7 @@ body {
 }
 
 :lang(ii) {
-    font-family: "NiepSha Sans", "Noto Sans Yi", "Source Han Sans CN", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: "NiepSha Sans", "Noto Sans Yi", "Source Han Sans CN", "PingFang SC", "Microsoft YaHei", sans-serif !important;
 }
 
 .container {
@@ -131,9 +91,21 @@ body {
     margin-bottom: 5px;
 }
 
+.title-group {
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
 .title-group h2 {
     margin: 0;
     font-size: 1.5rem;
+}
+
+.title-latin {
+    font-family: "Segoe UI", sans-serif;
+    position: relative;
 }
 
 .subtitle {
@@ -417,6 +389,12 @@ button:hover {
 
 .char-btn, .radical-btn {
     font-family: "NiepSha Sans", "Noto Sans Yi", "Microsoft YaHei", sans-serif;
+}
+
+.yi-logo {
+    font-family: "NiepSha Cursive";
+    font-size: 200%;
+    font-weight: 900;
 }
 
 #radical-char-buttons.char-grid {

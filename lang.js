@@ -1,6 +1,5 @@
 const translations = {
     "zh-CN": {
-        title: "ꎹꃚ / SHEPFU",
         subtitle: "凉山规范彝文检字编辑器",
         editor_placeholder: "在此处输入或点击下方按钮插入字符...",
         copy_btn: "📋 复制文本",
@@ -50,7 +49,6 @@ const translations = {
         copy_error_alert: "复制错误。"
     },
     "zh-TW": {
-        title: "ꎹꃚ / SHEPFU",
         subtitle: "涼山規範彝文檢字編輯器",
         editor_placeholder: "在此處輸入或點擊下方按鈕插入字元...",
         copy_btn: "📋 複製文字",
@@ -100,7 +98,6 @@ const translations = {
         copy_error_alert: "複製失敗。"
     },
     en: {
-        title: "ꎹꃚ / SHEPFU",
         subtitle: "Nuosu Yi Syllabary Character Finder & Editor",
         editor_placeholder: "Type here or click buttons to insert characters...",
         copy_btn: "📋 Copy Text",
@@ -150,8 +147,7 @@ const translations = {
         copy_error_alert: "Copy error."
     },
     ja: {
-        title: "ꎹꃚ / SHEPFU",
-        subtitle: "涼山規範彝（イ）文字検索・エディタ",
+        subtitle: "シャフ — 涼山規範彝（イ）文字検索・エディタ",
         editor_placeholder: "ここに入力するか、ボタンをクリックして文字を挿入...",
         copy_btn: "📋 テキストをコピー",
         copied: "✅ コピーしました",
@@ -200,7 +196,6 @@ const translations = {
         copy_error_alert: "コピーに失敗しました。手動でコピーしてください。"
     },
     ko: {
-        title: "ꎹꃚ / SHEPFU",
         subtitle: "량산(涼山) 표준 이(彝) 문자 찾기 및 편집기",
         editor_placeholder: "여기에 입력하거나 아래 버튼을 클릭하여 문자 삽입...",
         copy_btn: "📋 텍스트 복사",
@@ -250,7 +245,6 @@ const translations = {
         copy_error_alert: "복사 실패."
     },
     ii: {
-        title: "ꎹꃚ / SHEPFU",
         subtitle: "ꆃꎭꋊꄻꆈꌠꁱꂷꎹꏦꏓꁱꅍ",
         editor_placeholder: "在此处输入或点击下方按钮插入字符...",
         copy_btn: "📋 ꁱꂷꌡꄉꄻ",
@@ -300,7 +294,6 @@ const translations = {
         copy_error_alert: "复制错误。"
     },
     "za": {
-        title: "ꎹꃚ / SHEPFU",
         subtitle: "Hongdawz Rasaw Sanraiz Sawyizcuz Gveihfan Liengzsanh",
         editor_placeholder: "Youq gizneix coqhaeuj roxnaeuz mbaenq gij anniuj baihlaj daeuj caphaeuj cihsaw...",
         copy_btn: "📋 Fukceiq cihsaw",
@@ -392,7 +385,6 @@ function setLanguage(lang) {
         if (text) el.placeholder = text;
     });
 
-    document.title = t('title');
     const radicalLabel = document.getElementById('current-radical-name');
     const radicalCharContainer = document.getElementById('radical-char-buttons');
     
