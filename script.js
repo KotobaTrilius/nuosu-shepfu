@@ -89,11 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const ipa = toIPA(pinyin) || "?";
         
         const formattedStrokes = strokes ? strokes.split('').join('-') : t('info_none');
+
+        const ipaPart = (pinyin == "w" ? `${t('iteration_mark')}` : `<strong>${t('info_ipa')}:</strong> <span class="ipa">/${ipa}/</span>`)
         
         infoDisplay.innerHTML = `
-            <strong>${t('info_char')}:</strong> ${char} | 
+            <strong>${t('info_char')}:</strong> <strong>${char}</strong> | 
             <strong>${t('info_pinyin')}:</strong> ${pinyin} |
-            <strong>${t('info_ipa')}:</strong> <span class="ipa">/${ipa}/</span>
+            ${ipaPart}
         `;
         // | <strong>${t('info_strokes')}:</strong> ${formattedStrokes}
     }
@@ -198,11 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const radicalChar in radicalMap) {
             const radicalData = radicalMap[radicalChar];
             
-            let btnText = radicalChar;
+            let btnText = `[${radicalData.name}]\u00A0\u00A0\u00A0`;;
+            btnText += radicalChar
             if (radicalData.vars && radicalData.vars.length > 0) {
                 btnText += ` ( ${radicalData.vars.join(' ')} )`;
             }
-            btnText += `\u00A0\u00A0\u00A0[${radicalData.name}]`;
 
             const btn = document.createElement('button');
             btn.textContent = btnText;
@@ -429,5 +431,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initRadicals();
     initStrokeKeyboard();
     
-    setLanguage('zh');
+    setLanguage('zh-CN');
 });

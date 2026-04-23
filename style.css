@@ -7,16 +7,28 @@ body {
     padding: 20px;
 }
 
-:lang(zh), :lang(zh-CN), :lang(zh-TW) {
+:lang(zh), :lang(zh-CN) {
     font-family: "Source Han Sans CN", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-:lang(en) {
+:lang(zh-TW) {
+    font-family: "Source Han Sans TC", "PingFang TC", sans-serif;
+}
+
+:lang(en) :lang(za) {
     font-family: "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 }
 
 :lang(ja) {
     font-family: "Yu Gothic", "Meiryo", "Hiragino Kaku Gothic ProN", "MS PGothic", sans-serif;
+}
+
+:lang(ko) {
+    font-family: "Source Han Sans KR", sans-serif;
+}
+
+:lang(ii) {
+    font-family: "Noto Sans Yi", "Source Han Sans CN", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 .container {
