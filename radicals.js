@@ -65,7 +65,7 @@ const radicalMap = {
         name: "ꈥꀨ",
         name_trans: "GGOP",
         syllables: [
-            [1, ["rry", "rryx", "ggop", "shyp", "nga"]],
+            [1, ["rry", "rryx", "ggop", "shyp", "nga", "ngax"]],
             [2, ["nyit", "hnie", "hniex", "njy", "njyx", "syp", "nryt", "ndot", "ggap", "le", "lex", "ndo", "ndox", "ggat", "mgap", "nre", "nrex", "zo", "zox", "fy", "fyx", "hmuo", "hmuox", "fyt"]],
             [3, ["tuo", "tuox", "rryt", "ssut"]],
             [4, ["ndop", "ssup", "shet", "jie"]],
