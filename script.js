@@ -130,25 +130,18 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const matchedChars = [];
+        const matchedEntries = Object.entries(charLookupReverse)
+            .filter(([pinyin, char]) => pinyin.startsWith(query))
+            .sort((entry1, entry2) => entry1[0].localeCompare(entry2[0]));
 
-        for (const pinyin in charLookupReverse) {
-            if (pinyin.startsWith(query)) {
-                const char = charLookupReverse[pinyin];
-                if (char && charInfo[char]) {
-                    matchedChars.push(char);
-                }
-            }
-        }
+        const matchedChars = matchedEntries.map(([pinyin, char]) => char);
+        
+        pinyinMatchCountLabel.textContent = matchedChars.length;
 
-        const uniqueChars = [...new Set(matchedChars)];
-
-        pinyinMatchCountLabel.textContent = uniqueChars.length;
-
-        if (uniqueChars.length === 0) {
+        if (matchedChars.length === 0) {
             pinyinCharContainer.innerHTML = `<p class="hint">${t('pinyin_no_match')}</p>`;
         } else {
-            uniqueChars.forEach(char => {
+            matchedChars.forEach(char => {
                 const btn = createCharButton(char);
                 if (btn) pinyinCharContainer.appendChild(btn);
             });
@@ -200,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const radicalChar in radicalMap) {
             const radicalData = radicalMap[radicalChar];
             
-            let btnText = `[${radicalData.name}]\u00A0\u00A0\u00A0`;;
+            let btnText = `[${radicalData.name}]\u00A0\u00A0\u00A0`;z
             btnText += radicalChar
             if (radicalData.vars && radicalData.vars.length > 0) {
                 btnText += ` ( ${radicalData.vars.join(' ')} )`;
