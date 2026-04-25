@@ -151,6 +151,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pinyinInput.addEventListener('input', filterCharsByPinyin);
 
+    function flushPinyinExactMatches() {
+        const elements = pinyinCharContainer.querySelectorAll('.exact-match');
+        console.log(elements);
+        if (elements.length === 0) return;
+
+        const chars = Array.from(elements).map(elem => elem.textContent);
+        const str = chars.join('');
+        insertAtCursor(editor, str);
+        clearPinyin();
+    }
+
+    pinyinInput.addEventListener('keydown', (e) => {
+        if (e.key == 'Enter') flushPinyinExactMatches();
+    });
+
     function clearPinyin() {
         pinyinInput.value = "";
         filterCharsByPinyin();
