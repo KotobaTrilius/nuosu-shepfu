@@ -9,10 +9,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const pinyinMatchCountLabel = document.getElementById('pinyin-match-count');
     const clearPinyinBtn = document.getElementById('clear-pinyin-btn');
 
+    window.pinyinTrie = {};
+
+    for (const pinyin in charLookupReverse) {
+        let ptr = pinyinTrie;
+        for (const ch of pinyin) {
+            ptr[ch] = ptr[ch] || {};
+            ptr = ptr[ch];
+        }
+        ptr.pinyin = pinyin;
+    }
+
+    function cutQuery(query) {
+        const pinyins = [];
+        const l = query.length;
+
+        let ptr = pinyinTrie;
+
+        let trailerStart = 0;
+
+        for (let i = 0; i < l; ++i) {
+            const ch = query[i];
+            
+            if (ptr[ch]) { // can advance
+                ptr = ptr[ch];
+            } else { // cannot advance
+                if (ptr.pinyin) {
+                    pinyins.push(ptr.pinyin);
+                    trailerStart = i;
+                    ptr = pinyinTrie[ch];
+                } else {
+                    break;
+                }
+            }
+        }
+
+        if (trailerStart < l) pinyins.push(query.substring(trailerStart, l));
+
+        return pinyins;
+    }
 
     function filterCharsByPinyin() {
         pinyinCharContainer.innerHTML = '';
         const query = pinyinInput.value.toLowerCase().trim();
+
+        console.log(cutQuery(query));
 
         if (!query) {
             pinyinCharContainer.innerHTML = `<p class="hint">${t('pinyin_hint')}</p>`;
@@ -20,12 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        queryCut = cutQuery(query);
+
+        exactMatches = queryCut.slice(0, -1).map(pinyin => 
+            [charLookupReverse[pinyin], true]
+        );
+
+        const trailerQuery = queryCut.at(-1);
+
         const matchedEntries = Object.entries(charLookupReverse)
-            .filter(([pinyin, char]) => pinyin.startsWith(query))
+            .filter(([pinyin, char]) => pinyin.startsWith(trailerQuery))
             .sort((entry1, entry2) => entry1[0].localeCompare(entry2[0]));
 
-        const matchedChars = matchedEntries
-            .map(([pinyin, char]) => [char, pinyin === query]);
+        const matchedChars = [...exactMatches, ...matchedEntries
+            .map(([pinyin, char]) => [char, pinyin === trailerQuery])];
 
         pinyinMatchCountLabel.textContent = matchedChars.length;
 
