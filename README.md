@@ -7,9 +7,9 @@ Version: 0.1.6
 https://kotobatrilius.github.io/nuosu-fushep/
 
 # Main Agenda
-* To support input of radical characters.
 * To support more fluent input in romanization search mode.
 * To support stroke search mode.
+* To add several info panels.
 * To support mobile view.
 
 # Acknowledgement
