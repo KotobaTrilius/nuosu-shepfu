@@ -1219,7 +1219,33 @@ const charInfo = {
     "꓃": "che=",
     "꓄": "zziet=",
     "꓅": "nbie=",
-    "꓆": "ke="
+    "꓆": "ke=",
+    // BELOW ARE PUNCTUATION MARKS (non-variant)
+    "，": ",",
+    "。": ".",
+    "：": ":",
+    "；": ";",
+    "、": "\\",
+    "？": "?",
+    "！": "!",
+    "……": "^",
+    "——": "_",
+    "·": "`",
+    "￥": "$",
+    "（": "(",
+    "）": ")",
+    "【": "[",
+    "】": "]",
+    "《": "<",
+    "》": ">",
+    // QUOTATION MARK (LEFT ONLY)
+    "“": "\"",
+    "‘": "'",
+};
+
+const quotationMirror = {
+    "“": "”",
+    "‘": "’",
 };
 
 const charLookupReverse = Object.fromEntries(

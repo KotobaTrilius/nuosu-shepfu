@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function cutQuery(query) {
-        const delimiters = "' ";
+        const delimiters = "- ";
 
         const pinyins = [];
         const l = query.length;
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let i = 0; i < l; ++i) {
             const ch = query[i];
-            
+
             if (ptr[ch]) { // can advance
                 ptr = ptr[ch];
             } else { // cannot advance
@@ -64,8 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pinyinCharContainer.innerHTML = '';
         const query = pinyinInput.value.toLowerCase().trim();
 
-        console.log(cutQuery(query));
-
         if (!query) {
             pinyinCharContainer.innerHTML = `<p class="hint">${t('pinyin_hint')}</p>`;
             pinyinMatchCountLabel.textContent = '0';
@@ -74,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         queryCut = cutQuery(query);
 
-        exactMatches = queryCut.slice(0, -1).map(pinyin => 
+        exactMatches = queryCut.slice(0, -1).map(pinyin =>
             [charLookupReverse[pinyin], true]
         );
 
@@ -86,6 +84,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const matchedChars = [...exactMatches, ...matchedEntries
             .map(([pinyin, char]) => [char, pinyin === trailerQuery])];
+
+        quotationFlags = Object.fromEntries(
+            Object.entries(quotationMirror)
+                .map(quotationMark => [quotationMark, false]));
+
+        for (let i = 0; i < matchedChars.length; ++i) {
+            let seg = matchedChars[i][0];
+            if (quotationMirror[seg]) {
+                if (quotationFlags[seg]) {
+                    matchedChars[i][0] = quotationMirror[seg];
+                }
+                quotationFlags[seg] = !quotationFlags[seg];
+            }
+        }
 
         pinyinMatchCountLabel.textContent = matchedChars.length;
 
