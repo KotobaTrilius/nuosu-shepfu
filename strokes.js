@@ -1,5 +1,18 @@
+const splittableStrokes = {
+    "N": ["|", "\\", "|"],
+};
+
+const ambiguousStrokes = {
+    ".|": [".", "|"],
+    ".-": [".", "-"],
+};
+
+function expandStrokes(strokes) {
+    // TO-DO: implement
+}
+
 const charStrokes = {
-    "": "",
+    "": [],
 };
 
 const ALL_STROKES = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
