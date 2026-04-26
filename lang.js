@@ -93,6 +93,7 @@ const translations = {
         pinyin_match_title: "相符字元",
         pinyin_hint: "輸入羅馬拼音以篩選字元（前綴匹配）",
         pinyin_no_match: "未找到相符字元",
+        punctuation_mark: "標點符號",
         
         info_char: "字元",
         info_pinyin: "羅馬拼音",
@@ -200,6 +201,7 @@ const translations = {
         pinyin_match_title: "一致する文字",
         pinyin_hint: "ローマ字を入力してフィルタリング (前方一致)",
         pinyin_no_match: "一致する文字が見つかりません",
+        punctuation_mark: "句読点",
         
         info_char: "文字",
         info_pinyin: "ローマ字",
@@ -253,6 +255,7 @@ const translations = {
         pinyin_match_title: "일치하는 문자",
         pinyin_hint: "문자를 필터링하려면 로마자 표기를 입력하세요 (접두사 일치)",
         pinyin_no_match: "일치하는 문자를 찾을 수 없습니다",
+        punctuation_mark: "구두점",
         
         info_char: "문자",
         info_pinyin: "로마자 표기",
@@ -306,6 +309,7 @@ const translations = {
         pinyin_match_title: "匹配字符",
         pinyin_hint: "输入拉丁转写以筛选字符（从前侧匹配）",
         pinyin_no_match: "未找到匹配字符",
+        punctuation_mark: "ꅇꌐꂷ",
         
         info_char: "ꁱꂷ",
         info_pinyin: "ꃚꁆꁱꂷ",
@@ -359,6 +363,7 @@ const translations = {
         pinyin_match_title: "Cihsaw doxboiq",
         pinyin_hint: "Coqhaeuj bingqyaem daeuj raenggenj cihsaw (daj hainduj doxboiq)",
         pinyin_no_match: "Caengz ra raen cihsaw doxboiq",
+        punctuation_mark: "Biudiemj",
         
         info_char: "Cihsaw",
         info_pinyin: "Bingqyaem Latin",
